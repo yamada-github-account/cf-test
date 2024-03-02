@@ -5,36 +5,48 @@ body {
     padding: 0;
 }
 
-header, nav, section, footer {
+header, footer {
     padding: 20px;
-    margin: 10px;
+    background-color: #f3f3f3;
+    text-align: center;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
+    text-align: center;
 }
 
 nav ul li {
     display: inline;
-    margin-right: 10px;
+    margin: 0 10px;
 }
 
-/* レスポンシブデザインのスタイル */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+section {
+    padding: 20px;
+    margin: 10px;
+    flex-basis: 45%; /* PC表示時のデフォルトサイズ */
+    background-color: #f9f9f9;
+}
+
+/* スマートフォン表示時のスタイル */
 @media (max-width: 600px) {
     nav ul li {
         display: block;
-        margin-bottom: 5px;
-    }
-}
-
-@media (max-width: 900px) {
-    body {
-        background-color: #f4f4f4;
+        margin: 10px 0;
     }
 
-    header, nav, section, footer {
-        margin: 10px;
-        padding: 20px;
+    .container {
+        flex-direction: column;
+    }
+
+    section {
+        flex-basis: 100%; /* スマートフォン表示時は全幅を使用 */
     }
 }
