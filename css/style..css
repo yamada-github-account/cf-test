@@ -2,51 +2,53 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-}
-
-header, footer {
     padding: 20px;
-    background-color: #f3f3f3;
-    text-align: center;
 }
 
+/* ナビゲーションスタイル */
 nav ul {
     list-style-type: none;
     padding: 0;
-    text-align: center;
+    margin: 0;
+    display: flex; /* 横並びに表示 */
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+    padding: 10px;
+    background: lightgray;
+    margin-right: 5px;
+    margin-bottom: 5px;
 }
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-section {
-    padding: 20px;
-    margin: 10px;
-    flex-basis: 45%; /* PC表示時のデフォルトサイズ */
-    background-color: #f9f9f9;
-}
-
-/* スマートフォン表示時のスタイル */
-@media (max-width: 600px) {
-    nav ul li {
-        display: block;
-        margin: 10px 0;
+/* レスポンシブデザインのスタイル */
+@media screen and (max-width: 639px) {
+    body {
+        background-color: lightcoral;
     }
 
-    .container {
-        flex-direction: column;
-    }
-
-    section {
-        flex-basis: 100%; /* スマートフォン表示時は全幅を使用 */
+    nav ul {
+        flex-direction: column; /* 縦並びに変更 */
     }
 }
+
+@media only screen and (min-width: 640px) and (max-width: 1023px) {
+    body {
+        background-color: lightblue;
+    }
+
+    nav ul {
+        flex-direction: row; /* 横並びを維持 */
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        background-color: lightgreen;
+    }
+
+    nav ul {
+        flex-direction: row; /* 横並びを維持 */
+    }
+}
+
