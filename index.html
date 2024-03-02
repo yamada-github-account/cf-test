@@ -32,21 +32,9 @@
     <footer>
         <p>&copy; 2024 私のウェブサイト</p>
     </footer>
+    
+    <p>あなたが使用しているデバイス: <span id="deviceType">デバイスを検出中...</span></p>
 
-    <!-- デバイスタイプを表示するための領域 -->
-    <div id="deviceType" style="text-align:center; margin-top:20px;"></div>
-
-    <!-- デバイスタイプを判定し、表示するJavaScript -->
-    <script>
-        function displayDeviceType() {
-            var width = window.innerWidth;
-            var deviceType = width > 768 ? 'PC' : 'スマートフォン';
-            document.getElementById('deviceType').innerText = '表示中のデバイス: ' + deviceType;
-        }
-
-        // ページ読み込み時とウィンドウサイズ変更時にデバイスタイプを表示
-        window.onload = displayDeviceType;
-        window.onresize = displayDeviceType;
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
