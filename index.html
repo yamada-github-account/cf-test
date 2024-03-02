@@ -19,20 +19,34 @@
         </ul>
     </nav>
 
-    <div class="container">
-        <section id="section1">
-            <h2>セクション 1</h2>
-            <p>ここはセクション1です。HTMLの基本を学びましょう。</p>
-        </section>
+    <section id="section1">
+        <h2>セクション 1</h2>
+        <p>ここはセクション1です。HTMLの基本を学びましょう。</p>
+    </section>
 
-        <section id="section2">
-            <h2>セクション 2</h2>
-            <p>ここはセクション2です。ウェブサイトをカスタマイズする方法について学びます。</p>
-        </section>
-    </div>
+    <section id="section2">
+        <h2>セクション 2</h2>
+        <p>ここはセクション2です。ウェブサイトをカスタマイズする方法について学びます。</p>
+    </section>
 
     <footer>
         <p>&copy; 2024 私のウェブサイト</p>
     </footer>
+
+    <!-- デバイスタイプを表示するための領域 -->
+    <div id="deviceType" style="text-align:center; margin-top:20px;"></div>
+
+    <!-- デバイスタイプを判定し、表示するJavaScript -->
+    <script>
+        function displayDeviceType() {
+            var width = window.innerWidth;
+            var deviceType = width > 768 ? 'PC' : 'スマートフォン';
+            document.getElementById('deviceType').innerText = '表示中のデバイス: ' + deviceType;
+        }
+
+        // ページ読み込み時とウィンドウサイズ変更時にデバイスタイプを表示
+        window.onload = displayDeviceType;
+        window.onresize = displayDeviceType;
+    </script>
 </body>
 </html>
